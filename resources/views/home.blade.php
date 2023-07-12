@@ -232,6 +232,7 @@
                 <div class="col-md-10 col-sm-8 mt-1 event">
                     <div class="d-md-flex">
                         <button type="button" class="me-2 ahref" onclick="changeDate('today',true)">Today</button>
+                        <button type="button" class="me-2 ahref" onclick="changeDate('tomorrow',true)">Tomorrow</button>
                         <button type="button" class="me-2 ahref" onclick="changeDate('week',true)">This Week</button>
                         <button type="button" class="me-2 ahref" onclick="changeDate('next_week',true)">Next Week</button>
                         <button type="button" class="me-2 ahref" id="advanced-search-btn">More Filters</button>
@@ -541,6 +542,10 @@
                 if (val == 'today') {
                     $('#startDate').val(moment(current_date).format('YYYY-MM-DD'));
                     $('#endDate').val(moment(current_date).format('YYYY-MM-DD'));
+                } else if (val == 'tomorrow') {
+                    var tomorrow = moment(current_date).add(1, 'days').format('YYYY-MM-DD');
+                    $('#startDate').val(tomorrow);
+                    $('#endDate').val(tomorrow);
                 } else if (val == 'week') {
                     var firstday = moment().startOf('isoWeek').format('YYYY-MM-DD')
                     var lastday = moment().endOf('isoWeek').format('YYYY-MM-DD')

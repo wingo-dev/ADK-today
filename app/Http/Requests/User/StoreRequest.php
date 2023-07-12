@@ -37,7 +37,7 @@ class StoreRequest extends FormRequest
             'county'                => 'nullable',
             'state'                 => 'nullable',
             'zip'                   => 'nullable',
-            'g-recaptcha-response'  => ['required', new ValidRecaptcha]
+            // 'g-recaptcha-response'  => ['required', new ValidRecaptcha]
         ];
     }
     
